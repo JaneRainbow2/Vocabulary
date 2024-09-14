@@ -28,6 +28,10 @@ public class UserDto {
     @Pattern(regexp = "[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}", message = "Must be a valid e-mail address")
     private String email;
 
+    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}",
+            message = "Must be minimum 6 characters, at least one letter and one number")
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private UserRole role;
 

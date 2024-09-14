@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-             layout:decorate="~{layouts/template}"
-             lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <title>Home</title>
 </head>
 <body>
+<div th:replace="/fragments/header"></div>
+    <div class="mt-5 text-center">
+        <h1>The Ultimate ToDo App</h1>
+        <h4 style="color: darkgray">Finally you can sort out your daily tasks.</h4>
+    </div>
 
+    <div class="mt-5 text-center">
+        <img src="/img/hero.jpg" alt="hero" />
+    </div>
+
+</div>
 </body>
 </html>
