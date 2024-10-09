@@ -1,0 +1,10 @@
+create vocabulary - mediumpurple
+/voc/create
+update vocabulary - greenyellow
+/voc/{id}/update
+find vocabulary by id - green
+/voc/{id}/read
+find vocabulary by last name - green
+/users/{lastName}/read_by_id
+delete vocabulary by id - red
+/voc/{id}/delete

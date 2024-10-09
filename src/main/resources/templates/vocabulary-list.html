@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <title>List of Vocabulary</title>
+</head>
+<body>
+<div th:replace="/fragments/header"></div>
+<div class="col-md-offset-2 col-sm-8">
+    <h2>List of Vocabulary</h2>
+    <form th:action="@{/voc/create}" method="get">
+        <div align="right">
+            <input class="btn-info btn-lg" type="submit" value="Create new Vocabulary">
+        </div>
+    </form>
+    <br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">No.</th>
+        <th scope="col">ID.</th>
+        <th scope="col">Question</th>
+        <th scope="col">Answer</th>
+        <th scope="col">VocabularyID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Errors</th>
+        <th scope="col">Successes</th>
+        <th scope="col" colspan="2">Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vocabulary, iStat: ${vocabularies}">
+        <th scope="row" th:text="${iStat.index + 1}"/>
+        <td th:text="${vocabulary.id}"/>
+        <td th:text="${vocabulary.question}"/>
+        <td th:text="${vocabulary.answer}"/>
+        <td th:text="${vocabulary.vocabularyID}"/>
+        <td th:text="${vocabulary.date}"/>
+        <td th:text="${vocabulary.errors}"/>
+        <td th:text="${vocabulary.successes}"/>
+
+
+        <td>
+            <a th:href="@{|/voc/${vocabulary.id}/update|}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{|/voc/${vocabulary.id}/delete|}">Remove</a>
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

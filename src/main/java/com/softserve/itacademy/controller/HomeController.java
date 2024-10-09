@@ -1,21 +1,21 @@
 package com.softserve.itacademy.controller;
 
-import com.softserve.itacademy.service.UserService;
+import com.softserve.itacademy.service.VocabularyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-    private final UserService userService;
+    private final VocabularyService vocabularyService;
 
-    public HomeController(UserService userService) {
-        this.userService = userService;
+    public HomeController(VocabularyService vocabularyService) {
+        this.vocabularyService = vocabularyService;
     }
 
     @GetMapping({"/", "home"})
     public String home(Model model) {
-        model.addAttribute("users", userService.getAll());
+        model.addAttribute("vocabularies", vocabularyService.getAll());
         return "home";
     }
 }
